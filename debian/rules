@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+# Copyright 2012-2013, 2016 Jonas Smedegaard <dr@jones.dk>
+# Description: Main Debian packaging script for Test::CheckDeps
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/class/perl-makemaker.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+pkg = $(DEB_SOURCE_PACKAGE)
+
+# Needed by upstream build process and (always) at runtime
+deps = perl (>= 5.14) | libcpan-meta-perl (>= 2.120920)
+deps +=, libcpan-meta-check-perl (>= 0.007)
+deps +=, perl (>= 5.14) | libmodule-metatadata-perl
+
+# Needed by upstream regression tests
+deps-test = perl (>= 5.12) | libtest-simple-perl (>= 0.88)
+
+CDBS_BUILD_DEPENDS +=, $(deps), $(deps-test)
+CDBS_DEPENDS_$(pkg) = $(deps)

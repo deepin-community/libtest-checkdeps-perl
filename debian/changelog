@@ -1,0 +1,110 @@
+libtest-checkdeps-perl (0.010-2.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Tue, 29 Dec 2020 03:02:37 +0100
+
+libtest-checkdeps-perl (0.010-2) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Modernize Vcs-Browser field:
+    + Use https protocol.
+    + Use cgit web frontend.
+
+  [ Jonas Smedegaard ]
+  * Modernize Vcs-Git field: Use https protocol.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Bump debhelper compatibility level to 9.
+  * Update copyright info:
+    + Use License-Grant and License-Reference fields.
+      Thanks to Ben Finney.
+    + Extend coverage of Debian packaging.
+  * Add lintian override regarding license in License-Reference field.
+    See bug#786450.
+  * Drop CDBS get-orig-source target: Use gbp import-orig --uscan.
+  * Modernize CDBS use: Build-depend on licensecheck (not devscripts).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 25 Dec 2016 22:53:27 +0100
+
+libtest-checkdeps-perl (0.010-1) unstable; urgency=medium
+
+  * Team upload.
+
+  * New upstream release.
+  * Make Vcs-Git URL canonical.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 11 Dec 2013 20:46:28 +0100
+
+libtest-checkdeps-perl (0.008-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ upstream ]
+    + Switch back to MakeMaker.
+    + Bump prereq on CPAN::Meta::Check to 0.007.
+
+  [ intrigeri ]
+  * Include perl-makemaker.mk (not perl-build.mk).
+  * Update package relations:
+    + Drop dependency on libmodule-build-tiny-perl.
+    + Version dependency on libcpan-meta-check-perl (>= 0.007).
+    + Allow CPAN::Meta to be provided by perl (>= 5.14).
+
+ -- intrigeri <intrigeri@debian.org>  Tue, 01 Oct 2013 18:10:56 +0200
+
+libtest-checkdeps-perl (0.006-1) unstable; urgency=low
+
+  [ upstream ]
+  * New release.
+    + Require CPAN::Meta::Check 0.004.
+    + Explicitly require CPAN::Meta 2.120920.
+    + Switch to Module::Build::Tiny.
+
+  [ Jonas Smedegaard ]
+  * Include perl-build.mk (not perl-makemaker.mk).
+  * Update package relations:
+    + Tighten to (build-)depend versioned on libcpan-meta-perl.
+    + Build-depend on libmodule-build-tiny-perl.
+    + Tighten to build-depend versioned on cdbs: Needed for
+      Module::Build::Tiny.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 15 Jul 2013 22:07:20 +0200
+
+libtest-checkdeps-perl (0.004-1) unstable; urgency=low
+
+  [ upstream ]
+  * New release.
+    + Sort dependencies before displaying them.
+    + check_dependencies() can now optionally also test recommended and
+      suggested prerequisites.
+    + Reinstate loading of CPAN::Meta.
+
+  [ Salvatore Bonaccorso ]
+  * Use canonical host (anonscm.debian.org) in Vcs-Git URI.
+
+  [ Jonas Smedegaard ]
+  * Add README.source emphasizing control.in file as *not* a
+    show-stopper for contributions, referring to wiki page for details.
+  * Add git URL as alternate source.
+  * Stop tracking md5sum of upstream tarball.
+  * Remove debian/source/local-options: abort-on-upstream-changes and
+    unapply-patches are default in dpkg-source since 1.16.1.
+  * Bump dephelper compatibility level to 8.
+  * Bump standards-version to 3.9.4.
+  * Fix use comment and license pseudo-sections in copyright file to
+    obey silly restrictions of copyright format 1.0.
+  * Bump packaging license to GPL-3+, and extend copyrigt coverage for
+    myself to include current year.
+  * Relax to build-depend unversioned on cdbs: Needed version satisfied
+    even in oldstable.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 08 Jun 2013 22:41:06 +0200
+
+libtest-checkdeps-perl (0.002-1) unstable; urgency=low
+
+  * Initial packaging release.
+    Closes: bug#672163.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 09 May 2012 01:42:51 +0200

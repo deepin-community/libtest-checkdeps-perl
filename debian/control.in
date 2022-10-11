@@ -1,0 +1,20 @@
+Source: libtest-checkdeps-perl
+Section: perl
+Priority: optional
+Build-Depends: @cdbs@
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Jonas Smedegaard <dr@jones.dk>
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-perl/packages/libtest-checkdeps-perl
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libtest-checkdeps-perl.git
+Homepage: http://search.cpan.org/dist/Test-CheckDeps/
+
+Package: libtest-checkdeps-perl
+Architecture: all
+Depends: ${cdbs:Depends},
+ ${misc:Depends},
+ ${perl:Depends}
+Recommends: ${cdbs:Recommends}
+Description: check for presence of dependencies
+ Test::CheckDeps adds a test that assures all dependencies have been
+ installed properly. If requested, it can bail out all testing on error.
